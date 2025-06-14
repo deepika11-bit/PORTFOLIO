@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deepika Gurrala | Portfolio</title>
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+        color: #fff;
+        overflow-x: hidden;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 50px; /* reduced vertical padding */
+        align-items: center;
+      }
+
+      header h1 {
+        color: #b983ff;
+      }
+
+      nav a {
+        color: #ccc;
+        margin: 0 15px;
+        text-decoration: none;
+      }
+
+      nav a:hover {
+        color: #fff;
+        text-decoration: underline;
+      }
+
+      .hero {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 50px; /* reduced vertical padding */
+        gap: 10px; /* reduced gap between content and image */
+        flex-wrap: wrap;
+      }
+
+      .hero-text {
+        max-width: 600px;
+      }
+
+      .hero-text h1 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 10px;
+      }
+
+      .role {
+        font-size: 1.2rem;
+        margin: 10px 0;
+      }
+
+      .desc {
+        color: #ccc;
+        margin-bottom: 20px;
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+
+      .skills span {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.1);
+        margin: 5px 10px 5px 0;
+        padding: 6px 12px;
+        border-radius: 15px;
+      }
+
+      .buttons {
+        margin: 20px 0;
+      }
+
+      .btn {
+        padding: 10px 20px;
+        background: #9b5de5;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        margin-right: 10px;
+      }
+
+      .btn.outline {
+        background: transparent;
+        border: 2px solid #9b5de5;
+      }
+
+      .socials img {
+        width: 10px;
+        margin-right: 15px;
+        filter: brightness(0) invert(1);
+      }
+
+      .hero-image img {
+        max-width: 400px;
+      }
+
+      .about-section {
+        padding: 60px 30px;
+        /* unified background with grid texture */
+        background: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+        color: white;
+        text-align: center;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .about-container h2 {
+        color: #b983ff;
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      .about-container p {
+        max-width: 800px;
+        margin: 0 auto 30px;
+        color: #ccc;
+        line-height: 1.6;
+        font-size: 1rem;
+      }
+
+      .about-buttons {
+        margin: 20px 0 40px;
+      }
+
+      .btn.download {
+        background: #6f43ff;
+        color: white;
+      }
+
+      .btn.outline {
+        border: 2px solid #6f43ff;
+        color: #6f43ff;
+        background: transparent;
+      }
+
+      .btn:hover {
+        opacity: 0.9;
+      }
+
+      .about-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        padding: 30px;
+        width: 250px;
+        text-align: left;
+        position: relative;
+        box-shadow: 0 0 20px rgba(185, 131, 255, 0.1);
+      }
+
+      .icon {
+        font-size: 2rem;
+        margin-bottom: 15px;
+      }
+
+      .card h4 {
+        margin: 0 0 5px;
+        color: #fff;
+        font-size: 1.1rem;
+      }
+
+      .card p {
+        color: #aaa;
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+      }
+
+      .count {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #fff;
+      }
+
+      .portfolio-showcase {
+        padding: 60px 40px;
+        text-align: center;
+        background: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+      }
+
+      .portfolio-showcase h2 {
+        font-size: 2.8rem;
+        color: #9b6cff;
+        font-weight: 800;
+      }
+
+      .portfolio-showcase p {
+        font-size: 1.1rem;
+        color: #ccc;
+        margin-top: 10px;
+      }
+
+      .tabs {
+        margin: 30px auto;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .tab {
+        padding: 12px 30px;
+        background: linear-gradient(145deg, #1a1a2e, #111118);
+        border: none;
+        border-radius: 12px;
+        color: white;
+        font-weight: bold;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+
+      .tab.active {
+        background: linear-gradient(145deg, #372c5a, #222032);
+        color: #fff;
+      }
+
+      .projects {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .project-card {
+        background-color: #1f1f2e;
+        border-radius: 20px;
+        padding: 20px;
+        width: 350px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+        text-align: left;
+        transition: transform 0.3s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-8px);
+      }
+
+      .project-card img {
+        width: 100%;
+        border-radius: 12px;
+        margin-bottom: 20px;
+      }
+
+      .project-card h3 {
+        color: #c8c8ff;
+        margin-bottom: 10px;
+      }
+
+      .project-card p {
+        color: #bbb;
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+      }
+
+      .links {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .live-demo {
+        color: #6a94ff;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.95rem;
+      }
+
+      .details {
+        background-color: #2e2e48;
+        color: #ccc;
+        border: none;
+        padding: 8px 14px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: 0.3s ease;
+      }
+
+      .details:hover {
+        background-color: #44445f;
+      }
+
+      .contact-section {
+        max-width: 600px;
+        margin: 100px auto;
+        padding: 30px;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.05),
+          rgba(255, 255, 255, 0.01)
+        );
+        backdrop-filter: blur(20px);
+        border-radius: 25px;
+        box-shadow: 0 0 40px rgba(0, 255, 200, 0.05),
+          0 0 60px rgba(155, 100, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .contact-section h2 {
+        font-size: 2.5rem;
+        text-align: center;
+        color: #c08fff;
+        margin-bottom: 10px;
+      }
+
+      .contact-section p {
+        text-align: center;
+        color: #aaa;
+        margin-bottom: 30px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      input,
+      textarea {
+        padding: 14px 20px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        font-size: 1rem;
+        color: #fff;
+        outline: none;
+        resize: none;
+      }
+
+      input::placeholder,
+      textarea::placeholder {
+        color: #999;
+      }
+
+      .send-button {
+        background: #8b5cf6;
+        color: white;
+        font-weight: 600;
+        border: none;
+        border-radius: 10px;
+        padding: 14px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .send-button:hover {
+        background: #7c3aed;
+      }
+
+      .connect-box {
+        margin-top: 40px;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 15px;
+        padding: 20px;
+      }
+
+      .connect-title {
+        font-weight: 600;
+        color: #aaa;
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+        border-left: 3px solid #8b5cf6;
+        padding-left: 10px;
+      }
+
+      .connect-box a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #ccc;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 10px 15px;
+        border-radius: 10px;
+        transition: background 0.3s ease;
+        margin-top: 10px;
+      }
+
+      .connect-box a:hover {
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .connect-box a img {
+        width: 24px;
+        height: 24px;
+        margin-right: 12px;
+        filter: brightness(0) invert(1);
+      }
+      footer {
+        background: linear-gradient(to right, #1a1a2e, #0f0c29);
+        color: #ccc;
+        padding: 40px 20px;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+        border-top: 1px solid rgba(255,255,255,0.05);
+        margin-top: 80px;
+      }
+      footer a {
+        color: #ccc;
+        margin: 0 10px;
+        text-decoration: none;
+      }
+      footer a:hover {
+        color: #fff;
+      }
+      footer img {
+        filter: brightness(0) invert(1);
+        vertical-align: middle;
+      }
+      @media (max-width: 600px) {
+        .contact-section {
+          margin: 50px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Deepika Gurrala</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="#">About</a>
+        <a href="#">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Software Engineer & Full Stack Developer</h1>
+        <p class="desc">
+          Building innovative web applications with AI & Blockchain to solve
+          real-world problems.
+        </p>
+        <p class="role">Computer Science and Engineering Student</p>
+        <div class="skills">
+          <span>Frontend</span>
+          <span>JavaScript</span>
+          <span>Node.js</span>
+          <span>JAVA</span>
+        </div>
+        <div class="buttons">
+          <a href="#projects" class="btn">Projects</a>
+          <a href="#contact" class="btn outline">Contact</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img
+          src="https://masterpiecer-images.s3.yandex.net/e22b9fce941511ee8925d659965eed18:upscaled"
+          alt="Developer Illustration"
+        />
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="about-container">
+        <h2>About Me</h2>
+        <p>
+          Hello, I'm <strong>Deepika Gurrala</strong> passionate about building
+          smart and scalable web & mobile applications. I've completed web
+          development projects and constantly explore new technologies to refine
+          my skills. Focused on continuous learning, I aim to transition into
+          the IT industry and eventually move towards AI and data science.
+        </p>
+        <div class="about-buttons">
+          <a href="Deepika_Resume.pdf" class="btn download" download
+            >⬇ Download CV</a
+          >
+          <a href="#projects" class="btn outline">💻 View Projects</a>
+        </div>
+        <div class="about-cards">
+          <div class="card">
+            <div class="icon">💻</div>
+            <h4>Total Projects</h4>
+            <p>Innovative web & mobile solutions crafted</p>
+            <span class="count">4</span>
+          </div>
+          <div class="card">
+            <div class="icon">🎓</div>
+            <h4>Certificates</h4>
+            <p>Professional skills validated</p>
+            <span class="count">3</span>
+          </div>
+          <div class="card">
+            <div class="icon">🌐</div>
+            <h4>Years of Experience</h4>
+            <p>Continuous learning journey</p>
+            <span class="count">2</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Showcase Section -->
+    <section class="portfolio-showcase">
+      <h2>Portfolio Showcase</h2>
+      <p>
+        Explore my journey through projects, certifications, and technical
+        expertise. Each section represents a milestone in my continuous learning
+        path.
+      </p>
+      <div class="tabs">
+        <button class="tab active">Projects</button>
+        <button class="tab">Certificates</button>
+        <button class="tab">Tech Stack</button>
+      </div>
+      <div class="projects">
+        <div class="project-card">
+          <img src="image.png" alt="IntervueAI Screenshot" />
+          <h3>IntervueAI</h3>
+          <p>
+            Real-time mock interviews with AI, no forms or clicks just natural,
+            personalized conversations.
+          </p>
+          <div class="links">
+            <a href="#" class="live-demo">Live Demo ↗</a>
+            <button class="details">Details →</button>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="image1.png" alt="Blendy Screenshot" />
+          <h3>Blendy</h3>
+          <p>
+            A social app where you can connect in real-time, log in with one
+            click, share moments, posts instantly.
+          </p>
+          <div class="links">
+            <a href="#" class="live-demo">Live Demo ↗</a>
+            <button class="details">Details →</button>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="image2.png" alt="WATCHit Screenshot" />
+          <h3>WATCHit</h3>
+          <p>
+            A video streaming app made for easy, personal entertainment and
+            everything you love to binge.
+          </p>
+          <div class="links">
+            <a href="#" class="live-demo">Live Demo ↗</a>
+            <button class="details">Details →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <h2>Contact Me</h2>
+      <p>Got a question? Send me a message, and I’ll get back to you soon.</p>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit" class="send-button">📨 Send Message</button>
+      </form>
+      <div class="connect-box">
+        <div class="connect-title">Connect With Me</div>
+        <a href="https://www.linkedin.com/in/your-linkedin" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" />
+          Let's Connect on LinkedIn
+        </a>
+        <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 .5C5.7.5.5 5.8.5 12.3c0 5.2 3.4 9.6 8.2 11.1.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.6-1.4-2-1.4-2-1.2-.8.1-.8.1-.8 1.3.1 2 1.3 2 1.3 1.1 2 2.8 1.4 3.5 1.1.1-.8.4-1.4.7-1.7-2.7-.3-5.5-1.4-5.5-6.3 0-1.4.5-2.5 1.3-3.4-.1-.3-.6-1.7.1-3.4 0 0 1.1-.4 3.6 1.3a12.2 12.2 0 016.5 0c2.5-1.7 3.6-1.3 3.6-1.3.7 1.7.2 3.1.1 3.4.8.9 1.3 2 1.3 3.4 0 4.9-2.8 6-5.5 6.3.4.3.8 1 .8 2v3c0 .3.2.7.8
+0.6A11.9 11.9 0 0023.5 12c0-6.5-5.2-11.8-11.5-11.8z"/>
+          </svg>
+          Let's Connect on GitHub
+        </a>
+      </div>
+    </section>
+     <!-- Footer Section -->
+     <footer>
+      <div style="max-width: 900px; margin: auto;">
+        <h3 style="color: #b983ff; margin-bottom: 10px;">Deepika Gurrala</h3>
+        <p style="font-size: 0.95rem; color: #aaa; margin-bottom: 20px;">
+          Passionate about building intelligent and intuitive digital experiences.
+        </p>
+        <div style="margin-bottom: 20px;">
+          <a href="#">Home</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div style="margin-bottom: 20px;">
+          <a href="https://github.com/yourusername" target="_blank" style="margin: 0 10px;">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="20" alt="GitHub" />
+          </a>
+          <a href="https://linkedin.com/in/your-linkedin" target="_blank" style="margin: 0 10px;">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="20" alt="LinkedIn" />
+          </a>
+        </div>
+        <small style="color: #777;">&copy; 2025 Deepika Gurrala. All Rights Reserved.</small>
+      </div>
+    </footer>
+  </body>
+</html>
